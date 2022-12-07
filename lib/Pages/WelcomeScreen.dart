@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:incrediblevisibility/Pages/LoginScreen.dart';
 import 'package:incrediblevisibility/Pages/RegisterScreen.dart';
 import 'package:incrediblevisibility/widgets/buttons.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -78,6 +79,49 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 );
               },
             ), //Reusable button
+            SizedBox(height: height * 0.18),
+            Text(
+              "By creating an account, you agree to our ",
+              style: GoogleFonts.poppins(
+                color: Colors.white,
+                fontSize: 10,
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                InkWell(
+                  child: Text(
+                    "Terms & Conditions ",
+                    style: GoogleFonts.poppins(
+                      fontSize: 10,
+                      decoration: TextDecoration.underline,
+                      color: Colors.white,
+                    ),
+                  ),
+                  onTap: () => launchUrl(
+                    Uri.parse("https://google.com"),
+                  ),
+                ), // for hyperlink
+                Text(
+                  "and agree to ",
+                  style: GoogleFonts.poppins(fontSize: 10, color: Colors.white),
+                ),
+                InkWell(
+                  child: Text(
+                    "Privacy Policy",
+                    style: GoogleFonts.poppins(
+                      fontSize: 10,
+                      color: Colors.white,
+                      decoration: TextDecoration.underline,
+                    ),
+                  ),
+                  onTap: () => launchUrl(
+                    Uri.parse("https://google.com"),
+                  ),
+                ), // for hyperlink
+              ],
+            )
           ],
         ),
       ),

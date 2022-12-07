@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:incrediblevisibility/widgets/buttons.dart';
 import 'package:incrediblevisibility/widgets/passwordtextfield.dart';
 import 'package:incrediblevisibility/widgets/textformfield.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher.dart'; //to launch it in web browser
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -86,7 +86,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 InkWell(
                   child: Text(
                     "Terms & Conditions ",
-                    style: GoogleFonts.poppins(color: Colors.blue),
+                    style: GoogleFonts.poppins(
+                      color: Colors.blue,
+                      decoration: TextDecoration.underline,
+                    ),
                   ),
                   onTap: () => launchUrl(
                     Uri.parse("https://google.com"),
@@ -99,7 +102,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 InkWell(
                   child: Text(
                     "Privacy Policy",
-                    style: GoogleFonts.poppins(color: Colors.blue),
+                    style: GoogleFonts.poppins(
+                      color: Colors.blue,
+                      decoration: TextDecoration.underline,
+                    ),
                   ),
                   onTap: () => launchUrl(
                     Uri.parse("https://google.com"),
